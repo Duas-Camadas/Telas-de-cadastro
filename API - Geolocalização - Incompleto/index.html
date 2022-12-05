@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <h1>mapa</h1>
+    <div id="mapContainer"></div>
+
+
+    <script>
+        var platform = new H.service.Platform({
+            'apikey': '4gIMi09R9m0F9RHLIxACL3gpS3C5SQmypiFVtFmG5xI'
+        });
+
+        var defaultLayers = platform.createDefaultLayers();
+
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.vector.normal.map,
+            {
+                zoom: 10,
+                center: { lat: 52.5, lng: 13.4 }
+            });
+
+    </script>
+
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <h1>mapa feito com muito ódio</h1>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+  
+
+
+  <script>
+    // Initialize the platform object
+    var platform = new H.service.Platform({
+      'apikey': 'rfQfGRM_anU-mHLjd1Yv5oUgbmB_d41KAgjT9pvHqgAnUGVakr-f9qTlZvnkWIXVe7CfMYCvF7wUphLNVgonaw'
+    });
+
+    // Obtain the default map types from the platform object
+    var maptypes = platform.createDefaultLayers();
+
+    // Instantiate (and display) the map
+    var map = new H.Map(
+      document.getElementById('mapContainer'),
+      maptypes.vector.normal.map,
+      {
+        zoom: 7.9,
+        center: { lng: 13.4, lat: 52.51 }
+      });
+  </script>
+</body>
+</html> -->

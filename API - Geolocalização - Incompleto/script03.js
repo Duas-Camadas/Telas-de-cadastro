@@ -16,7 +16,7 @@
   //Step 1: initialize communication with the platform
   // In your own code, replace variable window.apikey with your own apikey
   var platform = new H.service.Platform({
-    'apikey': 'rfQfGRM_anU-mHLjd1Yv5oUgbmB_d41KAgjT9pvHqgAnUGVakr-f9qTlZvnkWIXVe7CfMYCvF7wUphLNVgonaw'
+    'apikey': window.rfQfGRM_anU-mHLjd1Yv5oUgbmB_d41KAgjT9pvHqgAnUGVakr-f9qTlZvnkWIXVe7CfMYCvF7wUphLNVgonaw
   });
   var defaultLayers = platform.createDefaultLayers();
   
@@ -42,4 +42,22 @@
   window.onload = function () {
     moveMapToBerlin(map);
   }
+
+  // Get an instance of the geocoding service:
+var service = platform.getSearchService();
+
+// Call the geocode method with the geocoding parameters,
+// the callback and an error callback function (called if a
+// communication error occurs):
+
+service.geocode({
+    q: 'Av paulista, 200'
+}, (result) => {
+    // Add a marker for each location found
+    result.items.forEach((item) => {
+        map.addObject(new H.map.Marker(item.position));
+        map.setCenter(item.position);
+        map.setZoom(15);
+    });
+}, alert);
                     
