@@ -72,7 +72,7 @@ month_names.forEach((e, index) => {
     month_list.appendChild(month)
 })
 
-// anos anteriores e anos seguintes
+// anos anteriores e anos seguintes - ver se é necessário deixar ou não
 
 document.querySelector('#prev-year').onclick = () => {
     --curr_year.value
